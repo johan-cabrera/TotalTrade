@@ -1,6 +1,6 @@
 ﻿namespace FOOD
 {
-    partial class CuentasP
+    partial class VentasP
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CuentasP));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasP));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -73,6 +73,7 @@
             this.rbTarjeta = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.lblTarjeta = new Bunifu.UI.WinForms.BunifuLabel();
             this.panelPago = new Bunifu.UI.WinForms.BunifuPanel();
+            this.lblsimbolo = new Bunifu.UI.WinForms.BunifuLabel();
             this.panelEfectivo = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblCambio = new Bunifu.UI.WinForms.BunifuLabel();
@@ -81,9 +82,8 @@
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblTotal = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblBillID = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblVentaID = new Bunifu.UI.WinForms.BunifuLabel();
             this.panelTarjeta = new Bunifu.UI.WinForms.BunifuPanel();
-            this.lblOrdenID = new Bunifu.UI.WinForms.BunifuLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPago.SuspendLayout();
             this.panelEfectivo.SuspendLayout();
@@ -804,11 +804,11 @@
             this.panelPago.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.panelPago.BorderRadius = 8;
             this.panelPago.BorderThickness = 1;
-            this.panelPago.Controls.Add(this.lblOrdenID);
+            this.panelPago.Controls.Add(this.lblsimbolo);
             this.panelPago.Controls.Add(this.panelEfectivo);
             this.panelPago.Controls.Add(this.lblTotal);
             this.panelPago.Controls.Add(this.bunifuLabel8);
-            this.panelPago.Controls.Add(this.lblBillID);
+            this.panelPago.Controls.Add(this.lblVentaID);
             this.panelPago.Controls.Add(this.panelTarjeta);
             this.panelPago.Controls.Add(this.lblTitulo);
             this.panelPago.Controls.Add(this.btnCancelar);
@@ -824,6 +824,23 @@
             this.panelPago.Size = new System.Drawing.Size(413, 652);
             this.panelPago.TabIndex = 77;
             this.panelPago.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelPago_MouseDown);
+            // 
+            // lblsimbolo
+            // 
+            this.lblsimbolo.AllowParentOverrides = false;
+            this.lblsimbolo.AutoEllipsis = false;
+            this.lblsimbolo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblsimbolo.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblsimbolo.Font = new System.Drawing.Font("Poppins", 15F);
+            this.lblsimbolo.Location = new System.Drawing.Point(276, 28);
+            this.lblsimbolo.Name = "lblsimbolo";
+            this.lblsimbolo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblsimbolo.Size = new System.Drawing.Size(12, 36);
+            this.lblsimbolo.TabIndex = 82;
+            this.lblsimbolo.Text = "$";
+            this.lblsimbolo.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblsimbolo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblsimbolo.Visible = false;
             // 
             // panelEfectivo
             // 
@@ -1012,22 +1029,21 @@
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lblBillID
+            // lblVentaID
             // 
-            this.lblBillID.AllowParentOverrides = false;
-            this.lblBillID.AutoEllipsis = false;
-            this.lblBillID.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblBillID.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblBillID.Font = new System.Drawing.Font("Poppins", 12F);
-            this.lblBillID.Location = new System.Drawing.Point(117, 29);
-            this.lblBillID.Name = "lblBillID";
-            this.lblBillID.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBillID.Size = new System.Drawing.Size(10, 28);
-            this.lblBillID.TabIndex = 78;
-            this.lblBillID.Text = "0";
-            this.lblBillID.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblBillID.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.lblBillID.Visible = false;
+            this.lblVentaID.AllowParentOverrides = false;
+            this.lblVentaID.AutoEllipsis = false;
+            this.lblVentaID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblVentaID.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblVentaID.Font = new System.Drawing.Font("Poppins", 14F);
+            this.lblVentaID.Location = new System.Drawing.Point(117, 26);
+            this.lblVentaID.Name = "lblVentaID";
+            this.lblVentaID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblVentaID.Size = new System.Drawing.Size(12, 34);
+            this.lblVentaID.TabIndex = 78;
+            this.lblVentaID.Text = "0";
+            this.lblVentaID.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblVentaID.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // panelTarjeta
             // 
@@ -1056,24 +1072,7 @@
             this.panelTarjeta.TabIndex = 77;
             this.panelTarjeta.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTarjeta_MouseDown);
             // 
-            // lblOrdenID
-            // 
-            this.lblOrdenID.AllowParentOverrides = false;
-            this.lblOrdenID.AutoEllipsis = false;
-            this.lblOrdenID.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblOrdenID.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblOrdenID.Font = new System.Drawing.Font("Poppins", 15F);
-            this.lblOrdenID.Location = new System.Drawing.Point(31, 55);
-            this.lblOrdenID.Name = "lblOrdenID";
-            this.lblOrdenID.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblOrdenID.Size = new System.Drawing.Size(13, 36);
-            this.lblOrdenID.TabIndex = 82;
-            this.lblOrdenID.Text = "0";
-            this.lblOrdenID.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblOrdenID.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.lblOrdenID.Visible = false;
-            // 
-            // CuentasP
+            // VentasP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1081,7 +1080,7 @@
             this.ClientSize = new System.Drawing.Size(413, 652);
             this.Controls.Add(this.panelPago);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CuentasP";
+            this.Name = "VentasP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CuentaP";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1122,13 +1121,13 @@
         private Bunifu.UI.WinForms.BunifuPanel panelTarjeta;
         public Bunifu.UI.WinForms.BunifuLabel lblTotal;
         public Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
-        public Bunifu.UI.WinForms.BunifuLabel lblBillID;
+        public Bunifu.UI.WinForms.BunifuLabel lblVentaID;
         private Bunifu.UI.WinForms.BunifuPanel panelEfectivo;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         public Bunifu.UI.WinForms.BunifuTextBox txtPago;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         public Bunifu.UI.WinForms.BunifuLabel lblCambio;
         private System.Windows.Forms.PictureBox pictureBox2;
-        public Bunifu.UI.WinForms.BunifuLabel lblOrdenID;
+        public Bunifu.UI.WinForms.BunifuLabel lblsimbolo;
     }
 }

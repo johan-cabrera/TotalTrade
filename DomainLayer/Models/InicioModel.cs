@@ -14,8 +14,7 @@ namespace DomainLayer.Models
         private InicioDA inicio;
         public double TotalRevenue { get; set; }
         public int TotalSales { get; set; }
-        public int TotalCustomers { get; set; }
-        public int TotalTables { get; set; }
+        public int TotalProducts { get; set; }
         public DataTable GrossRevenueList { get; set; }
         public DataTable TopProductList { get; set; }
 
@@ -39,8 +38,7 @@ namespace DomainLayer.Models
             inicio.LoadData();
             TotalRevenue = inicio.TotalRevenue;
             TotalSales = inicio.TotalSales;
-            TotalCustomers = inicio.TotalCustomers;
-            TotalTables = inicio.TotalTables;
+            TotalProducts = inicio.TotalProducts;
 
             foreach (RevenueByDate row in inicio.GrossRevenueList)
             {

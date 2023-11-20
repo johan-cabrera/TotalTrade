@@ -23,8 +23,7 @@ namespace DataAccessLayer.Entities
         //Atributos
         public double TotalRevenue { get; private set; }
         public int TotalSales { get; private set; }
-        public int TotalCustomers { get; private set; }
-        public int TotalTables { get; private set; }
+        public int TotalProducts { get; private set; }
         public List<RevenueByDate> GrossRevenueList { get; private set; }
         public List<TopProducts> TopProductsList { get; private set; }
 
@@ -41,17 +40,15 @@ namespace DataAccessLayer.Entities
                     command.Connection = conn;
                     try
                     {
-                        command.CommandText = "SELECT SUM(Total) FROM Cuentas WHERE CAST(FechaCierre AS DATE) = CAST(GETDATE() AS DATE)";
+                        command.CommandText = "SELECT SUM(Total) FROM Ventas WHERE CAST(FechaCierre AS DATE) = CAST(GETDATE() AS DATE)";
                         TotalRevenue = Convert.ToDouble(command.ExecuteScalar());
 
-                        command.CommandText = "SELECT COUNT(CuentaID) FROM Cuentas WHERE CAST(FechaCierre AS DATE) = CAST(GETDATE() AS DATE)";
+                        command.CommandText = "SELECT COUNT(VentaID) FROM Ventas WHERE CAST(FechaCierre AS DATE) = CAST(GETDATE() AS DATE) AND Estado = 'Completada'";
                         TotalSales = Convert.ToInt32(command.ExecuteScalar());
 
-                        command.CommandText = "SELECT SUM(O.CantidadClientes) FROM Ordenes O INNER JOIN Cuentas C ON C.OrdenID = O.OrdenID WHERE CAST(FechaCierre AS DATE) = CAST(GETDATE() AS DATE)";
-                        TotalCustomers = Convert.ToInt32(command.ExecuteScalar());
+                        command.CommandText = "SELECT COUNT(ProductoID) FROM Productos WHERE Estado = 'Activo'";
+                        TotalProducts = Convert.ToInt32(command.ExecuteScalar());
 
-                        command.CommandText = "SELECT COUNT(MesaID) FROM Mesas WHERE Estado = 'Disponible'";
-                        TotalTables = Convert.ToInt32(command.ExecuteScalar());
                     }
                     catch (Exception ex)
                     {
@@ -72,7 +69,7 @@ namespace DataAccessLayer.Entities
                 {
                     command.Connection = conn;
 
-                    command.CommandText = @"SELECT FechaCierre, SUM(Total) FROM Cuentas WHERE FechaCierre BETWEEN DATEADD(DAY, -7, GETDATE()) AND GETDATE() GROUP BY FechaCierre";
+                    command.CommandText = @"SELECT FechaCierre, SUM(Total) FROM Ventas WHERE FechaCierre BETWEEN DATEADD(DAY, -7, GETDATE()) AND GETDATE() GROUP BY FechaCierre";
                     
                     SqlDataReader reader = command.ExecuteReader();
                     
@@ -102,8 +99,7 @@ namespace DataAccessLayer.Entities
                 {
                     command.Connection = conn;
 
-                    command.CommandText = "SELECT TOP 5 M.NombrePlatillo, SUM(DO.Cantidad) AS TotalCantidad FROM DetalleOrden DO INNER JOIN Menu M ON M.PlatilloID = DO.PlatilloID INNER JOIN Cuentas C ON C.OrdenID = DO.OrdenID WHERE CAST(C.FechaCierre AS DATE) = CAST(GETDATE() AS DATE) GROUP BY M.NombrePlatillo ORDER BY TotalCantidad DESC;";
-                   
+                    command.CommandText = "SELECT TOP 5 P.NombreProducto, SUM(DV.Cantidad) AS TotalCantidad FROM DetalleVenta DV INNER JOIN Productos P ON P.ProductoID = DV.ProductoID INNER JOIN Ventas V ON V.VentaID = DV.VentaID WHERE CAST(V.FechaCierre AS DATE) = CAST(GETDATE() AS DATE) GROUP BY P.NombreProducto ORDER BY TotalCantidad DESC;";
                     SqlDataReader reader = command.ExecuteReader();
 
                     TopProducts result = new TopProducts();

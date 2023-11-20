@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace FOOD
 {
-    public partial class CuentasP : Form
+    public partial class VentasP : Form
     {
-        CuentasModel cuentasModel = new CuentasModel();
-        public CuentasP()
+        VentasModel ventasModel = new VentasModel();
+        public VentasP()
         {
             InitializeComponent();
         }
@@ -152,13 +152,13 @@ namespace FOOD
         {
             if(panelTarjeta.Visible && !string.IsNullOrEmpty(txtNumeroTarjeta.Text)) 
             {
-                cuentasModel.updateBill(lblBillID.Text, lblOrdenID.Text, "Cancelado");
+                ventasModel.updateSale(lblVentaID.Text, "Completada");
                 MessageBox.Show("Cuenta cancelada");
                 this.Close();
             }
             else if (panelEfectivo.Visible && !string.IsNullOrEmpty(txtPago.Text))
             {
-                cuentasModel.updateBill(lblBillID.Text, lblOrdenID.Text, "Cancelado");
+                ventasModel.updateSale(lblVentaID.Text, "Completada");
                 MessageBox.Show("Cuenta cancelada");
                 this.Close();
             }

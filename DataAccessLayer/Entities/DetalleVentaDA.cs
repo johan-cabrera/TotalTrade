@@ -10,12 +10,12 @@ using System.Xml.Linq;
 
 namespace DataAccessLayer.Entities
 {
-    public class DetalleOrdenDA : ConnectionSql
+    public class DetalleVentaDA : ConnectionSql
     {
         DataTable detalleOrden = new DataTable();
 
         //Metodo para obtener los datos de la tabla DetalleOrden
-        public DataTable showOrderDetails(int orderID)
+        public DataTable showSaleDetails(int saleID)
         {
             using(SqlConnection conn = getConnection())
             {
@@ -23,9 +23,9 @@ namespace DataAccessLayer.Entities
                 using(SqlCommand command = new SqlCommand()) 
                 {
                     command.Connection = conn;
-                    command.CommandText = "SELECT M.NombrePlatillo, DO.DetalleOrdenID, DO.Cantidad, DO.Comentarios FROM DetalleOrden DO INNER JOIN Menu M ON M.PlatilloID = DO.PlatilloID WHERE OrdenID = @id";
+                    command.CommandText = "SELECT P.NombreProducto, DV.DetalleVentaID, DV.Cantidad, DV.PrecioUnitario FROM DetalleVenta DV INNER JOIN Productos P ON P.ProductoID = DV.ProductoID WHERE VentaID = @id";
 
-                    command.Parameters.AddWithValue("@id", orderID);
+                    command.Parameters.AddWithValue("@id", saleID);
                     SqlDataReader reader = command.ExecuteReader();
 
                     detalleOrden.Clear();
@@ -36,7 +36,7 @@ namespace DataAccessLayer.Entities
         }
 
         //Metodo que inserta un registro al detalle de las ordenes
-        public void insertOrderDetail(int orderID, int dishID, int quantity,  double unitPrice, string comment)
+        public void insertSaleDetail(int orderID, int productID, int quantity,  double unitPrice)
         {
             using(SqlConnection conn = getConnection())
             {
@@ -44,12 +44,11 @@ namespace DataAccessLayer.Entities
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = conn;
-                    command.CommandText = "INSERT INTO DetalleOrden (OrdenID, PlatilloID, Cantidad, Comentarios, PrecioUnitario) VALUES (@orderID, @dishID, @quantity, @comment, @unitPrice)";
+                    command.CommandText = "INSERT INTO DetalleVenta (VentaID, ProductoID, Cantidad, PrecioUnitario) VALUES (@saleID, @productID, @quantity, @unitPrice)";
 
-                    command.Parameters.AddWithValue("@orderID", orderID);
-                    command.Parameters.AddWithValue("@dishID", dishID);
+                    command.Parameters.AddWithValue("@saleID", orderID);
+                    command.Parameters.AddWithValue("@productID", productID);
                     command.Parameters.AddWithValue("@quantity", quantity);
-                    command.Parameters.AddWithValue("@comment", comment);
                     command.Parameters.AddWithValue("@unitPrice", unitPrice);
 
                     command.ExecuteNonQuery();
@@ -58,7 +57,7 @@ namespace DataAccessLayer.Entities
         }
 
         //Metodo que elimina un registro del detalle de las ordenes
-        public void deleteOrderDetail(int detailOrderID)
+        public void deleteSaleDetail(int detailSaleID)
         {
             using(SqlConnection conn = getConnection())
             {
@@ -66,9 +65,9 @@ namespace DataAccessLayer.Entities
                 using(SqlCommand command = new SqlCommand())
                 {
                     command.Connection = conn;
-                    command.CommandText = "DELETE FROM DetalleOrden WHERE DetalleOrdenID = @id";
+                    command.CommandText = "DELETE FROM DetalleVenta WHERE DetalleVentaID = @id";
 
-                    command.Parameters.AddWithValue("@id", detailOrderID);
+                    command.Parameters.AddWithValue("@id", detailSaleID);
 
                     command.ExecuteNonQuery();
                 }

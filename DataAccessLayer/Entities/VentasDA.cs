@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Entities
 {
-    public class OrdenesDA : ConnectionSql
+    public class VentasDA : ConnectionSql
     {
         DataTable ordenes = new DataTable();
+        DataTable receipt = new DataTable();
 
         //Metodo para obtener los datos de la tabla ordenes
-        public DataTable showOrders()
+        public DataTable showSales()
         {
             using(SqlConnection conn = getConnection())
             {
@@ -22,7 +23,7 @@ namespace DataAccessLayer.Entities
                 using(SqlCommand command = new SqlCommand())
                 {
                     command.Connection = conn;
-                    command.CommandText = "SELECT * FROM Ordenes ORDER BY OrdenID DESC";
+                    command.CommandText = "SELECT * FROM Ventas ORDER BY VentaID DESC";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -34,7 +35,7 @@ namespace DataAccessLayer.Entities
         }
 
         //Metodo que inserta un registro a las ordenes
-        public int insertOrder(string TableID, string state, int customers)
+        public int insertSale()
         {
             int orderId;
             using (SqlConnection conn = getConnection())
@@ -43,11 +44,7 @@ namespace DataAccessLayer.Entities
                 using(SqlCommand command = new SqlCommand())
                 {
                     command.Connection = conn;
-                    command.CommandText = "INSERT INTO Ordenes (MesaID, Estado, CantidadClientes) VALUES (@tableID, @state, @customers); SELECT SCOPE_IDENTITY();";
-
-                    command.Parameters.AddWithValue("@tableID", TableID);
-                    command.Parameters.AddWithValue("@state", state);
-                    command.Parameters.AddWithValue("@customers", customers);
+                    command.CommandText = "INSERT INTO Ventas (Estado, FechaCierre, Total) VALUES ('En Proceso', GETDATE(), 0); SELECT SCOPE_IDENTITY();";
 
                     orderId = Convert.ToInt32(command.ExecuteScalar());
                 }
@@ -57,7 +54,7 @@ namespace DataAccessLayer.Entities
         }
 
         //Metodo que obtiene el valor de un registro de las ordenes en especifico
-        public DataTable getOrder(int orderID)
+        public DataTable getOrder(int saleID)
         {
             using (SqlConnection conn = getConnection())
             {
@@ -65,9 +62,9 @@ namespace DataAccessLayer.Entities
                 using(SqlCommand command = new SqlCommand())
                 {
                     command.Connection = conn;
-                    command.CommandText = "SELECT * FROM Ordenes WHERE OrdenID = @id";
+                    command.CommandText = "SELECT * FROM Ventas WHERE VentaID = @id";
 
-                    command.Parameters.AddWithValue("@id", orderID);
+                    command.Parameters.AddWithValue("@id", saleID);
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -78,33 +75,7 @@ namespace DataAccessLayer.Entities
             }
         }
 
-        //Metodo que obtiene las mesas que tienen ordenes activas
-        public List<string> getTablesInOrders()
-        {
-            List<string> tableList = new List<string>();
-
-            using (SqlConnection conn = getConnection())
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand())
-                {
-                    command.Connection = conn;
-                    command.CommandText = "SELECT DISTINCT MesaID FROM Ordenes WHERE Estado IN ('En Proceso', 'Lista', 'Servida');";
-
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        string mesaID = reader["MesaID"].ToString();
-                        tableList.Add(mesaID);
-                    }
-                }
-            }
-
-            return tableList;
-        }
-
-        public void updateOrder(int orderID, string tableID, string state, int quantity)
+        public void updateOrder(int saleId, string state)
         {
             using (SqlConnection conn = getConnection())
             {
@@ -112,14 +83,35 @@ namespace DataAccessLayer.Entities
                 using(SqlCommand command = new SqlCommand()) 
                 {
                     command.Connection = conn;
-                    command.CommandText = "UPDATE Ordenes SET MesaID = @tableId, Estado = @state, CantidadClientes = @quantity WHERE OrdenID = @orderId";
+                    command.CommandText = "UPDATE Ventas SET Estado = @state WHERE VentaID = @saleId";
 
-                    command.Parameters.AddWithValue("@orderId", orderID);
-                    command.Parameters.AddWithValue("@tableId", tableID);
+                    command.Parameters.AddWithValue("@saleId", saleId);
                     command.Parameters.AddWithValue("@state", state);
-                    command.Parameters.AddWithValue("@quantity", quantity);
 
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //Metodo para retornar detalles del recibo
+        public DataTable receiptSale(int saleID)
+        {
+            using (SqlConnection conn = getConnection())
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = conn;
+                    command.CommandText = "SELECT P.NombreProducto, DV.Cantidad, (DV.PrecioUnitario * DV.Cantidad) AS Precio FROM DetalleVenta DV INNER JOIN Productos P ON P.ProductoID = DV.ProductoID WHERE VentaID = @saleID";
+
+                    command.Parameters.AddWithValue("@saleID", saleID);
+
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    receipt.Clear();
+                    receipt.Load(reader);
+                    return receipt;
                 }
             }
         }

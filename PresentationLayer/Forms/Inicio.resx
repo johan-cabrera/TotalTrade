@@ -127,30 +127,6 @@
     <value>#bunifu-label { padding: 0px; font-family: 'Poppins Medium'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(15, 23, 42); text-align: left; }</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuPanel4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAARUAAACACAYAAAAlMv2mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALJSURBVHhe7dihTiNRGIbhSiRyJRK5kktAIrkELoE74BK4
-        BCQSiSSbtDNhOqRlhmTkSiSSPUOOgYWEbr51z5P8af/T1r450wXAf7VaP542/dN1049T24+vxhjzcd76
-        sB5uVt1wVtPxt7ad9ucvlR9ctd32pN1sDupHAO/MfVj143HpxWWZu0978VadckupK8C3LO+Ho2Y9trfT
-        tFePyiNPucLMxakrwE6abjhvH8aLutZbSrnK1BVgJ8tue1guJpu6lsr0w/P8n0pdAXZWovJa335YAP6B
-        qABRogJEiQoQJSpAlKgAUaICRIkKECUqQJSoAFGiAkSJChAlKkCUqABRogJEiQoQJSpAlKgAUaICRIkK
-        ECUqQJSoAFGiAkSJChAlKkCUqABRogJEiQoQJSpAlKgAUaICRIkKECUqQJSoAFGiAkSJChAlKkCUqABR
-        ogJEiQoQJSpAlKgAUaICRIkKECUqQJSoAFGiAkSJChAlKkCUqABRogJEiQoQJSpAlKgAUaICRIkKECUq
-        QJSoAFGiAkSJChAlKkCUqABRogJEiQoQJSpAlKgAUaICRIkKECUqQJSoAFGiAkSJChAlKkCUqABRogJE
-        iQoQJSpAlKgAUaICRIkKECUqQJSoAFGiAkSJChAlKkCUqABRogJEiQoQJSpAlKgAUaICRIkKECUqQJSo
-        AFGiAkSJChAlKkCUqABRogJEiQoQJSpAlKgAUaICRIkKECUqQJSoAFGiAkSJChAlKkCUqABRogJEiQoQ
-        JSpAlKgAUe+jsh5ebqdpr64AO/t4U7lb3g9HdQXYya9++lEuJ7/rWqLyMF403XBeV4CdrNaPp+VyclXX
-        xWJ+9CkHm3azOahHAN/yZT/a/vHn/MGqG87adtqvxwCfeotJtz1p1mO76sfjevzeHJMSlsumH57L66sx
-        xnw56+Gl6Z+ul932sCYEIG2x+ANcBgha2TSJ0AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="lblMesas.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Poppins Medium'; font-size: 24pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(15, 23, 42); text-align: left; }</value>
-  </data>
-  <data name="bunifuLabel12.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Poppins'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(15, 23, 42); text-align: left; }</value>
-  </data>
   <data name="bunifuPanel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAARMAAACACAYAAAAoLI3hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -226,7 +202,7 @@
   <data name="bunifuLabel4.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Poppins'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(57, 154, 43); text-align: right; }</value>
   </data>
-  <data name="lblClientes.BaseStylesheet" xml:space="preserve">
+  <data name="lblProductos.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Poppins Medium'; font-size: 24pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(15, 23, 42); text-align: left; }</value>
   </data>
   <data name="bunifuLabel6.BaseStylesheet" xml:space="preserve">
@@ -322,5 +298,8 @@
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>338, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>68</value>
   </metadata>
 </root>

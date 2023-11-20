@@ -10,14 +10,13 @@ using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Printing;
 
 namespace FOOD
 {
     public partial class Cuentas : Form
     {
         CuentasModel cuentasModel = new CuentasModel();
-        OrdenesModel ordenesModel = new OrdenesModel();
+        VentasModel ordenesModel = new VentasModel();
         DataTable receipt;
         DataTable bill;
         public Cuentas()
@@ -89,7 +88,7 @@ namespace FOOD
                 DataTable bill = cuentasModel.getBill(billID);
                 DataRow row = bill.Rows[0];
 
-                DataTable order = ordenesModel.getOrder(row["OrdenID"].ToString());
+                DataTable order = ordenesModel.getSale(row["OrdenID"].ToString());
                 string table = order.Rows[0]["MesaID"].ToString();
 
                 viewBill.cbMesas.Text = table;
@@ -117,11 +116,11 @@ namespace FOOD
                     MessageBox.Show("Solo se pueden cancelar cuentas pendientes");
                     return;
                 }
-                CuentasP payBill = new CuentasP();
-                payBill.lblBillID.Text = billID.PadLeft(6, '0');
-                payBill.lblBillID.Visible = true;
+                VentasP payBill = new VentasP();
+                payBill.lblVentaID.Text = billID.PadLeft(6, '0');
+                payBill.lblVentaID.Visible = true;
                 payBill.lblTotal.Text = $"{amount}";
-                payBill.lblOrdenID.Text = orderID;
+                payBill.lblsimbolo.Text = orderID;
                 payBill.FormClosed += updateDgv;
                 payBill.ShowDialog();
             }

@@ -136,6 +136,7 @@ namespace FOOD
             if (string.IsNullOrEmpty(txtCorreo.Text)) validation = false;
             if (string.IsNullOrEmpty(txtContraseña.Text)) validation = false;
             if (string.IsNullOrEmpty(txtConfirmarContraseña.Text)) validation = false;
+            if (pbPerfil.Image == null) validation = false;
 
             return validation;
         }

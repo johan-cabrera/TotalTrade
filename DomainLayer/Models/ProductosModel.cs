@@ -8,20 +8,20 @@ using DataAccessLayer.Entities;
 
 namespace DomainLayer.Models
 {
-    public class MenuModel
+    public class ProductosModel
     {
-        private MenuDA menuDA = new MenuDA();
+        private ProductosDA productsDA = new ProductosDA();
 
         //Metodo que recibe y retorna el menu
-        public DataTable showMenu()
+        public DataTable showProducts()
         {
             DataTable menu = new DataTable();
-            menu = menuDA.showMenu();
+            menu = productsDA.showProducts();
             return menu;
         }
 
         //Metodo que da formato a los datos y los manda a insetar
-        public bool insertMenu(string name, string description, string state, string priceS)
+        public bool insertProduct(string name, string description, string state, string priceS, string stock)
         {
             bool validate;
             double price;
@@ -30,7 +30,7 @@ namespace DomainLayer.Models
 
             if (validate)
             {
-                menuDA.insertMenu(name, description, state, price);
+                productsDA.insertProduct(name, description, state, price, int.Parse(stock));
                 return true;
             }
             else
@@ -40,15 +40,15 @@ namespace DomainLayer.Models
         }
 
         //Metodo que recibe y retorna los datos de un registro del menu en especifico
-        public DataTable getMenu(string dishID, string dishName)
+        public DataTable getProduct(string dishID, string dishName)
         {
             DataTable menu = new DataTable();
-            menu = menuDA.getMenu(dishID, dishName);
+            menu = productsDA.getProduct(dishID, dishName);
             return menu;
         }
 
         //Metodo que da formato a los datos y los manda a actualizar
-        public bool updateMenu(string id, string name, string description, string state, string priceS)
+        public bool updateProduct(string id, string name, string description, string state, string priceS, string stock)
         {
             bool validate;
             double price;
@@ -56,7 +56,7 @@ namespace DomainLayer.Models
             validate = double.TryParse(priceS, out price);
             if (validate)
             {
-                menuDA.updateMenu(int.Parse(id), name, description, state, price);
+                productsDA.updateProduct(int.Parse(id), name, description, state, price, int.Parse(stock));
                 return true;
             }
             else

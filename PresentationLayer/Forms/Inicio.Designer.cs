@@ -31,13 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFecha = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblHora = new Bunifu.UI.WinForms.BunifuLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.lblMesas = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel12 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblIngresos = new Bunifu.UI.WinForms.BunifuLabel();
@@ -50,7 +47,7 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblClientes = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblProductos = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.barChartGanacias = new Bunifu.Charts.WinForms.ChartTypes.BunifuBarChart(this.components);
@@ -65,11 +62,8 @@
             this.chartPopulares = new Bunifu.Charts.WinForms.BunifuChartCanvas();
             this.donnutChartPopulares = new Bunifu.Charts.WinForms.ChartTypes.BunifuDoughnutChart(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblFecha = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.bunifuPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
@@ -93,6 +87,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1282, 170);
             this.panel1.TabIndex = 4;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AllowParentOverrides = false;
+            this.lblFecha.AutoEllipsis = false;
+            this.lblFecha.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblFecha.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblFecha.Font = new System.Drawing.Font("Poppins Light", 14F);
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.lblFecha.Location = new System.Drawing.Point(30, 130);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFecha.Size = new System.Drawing.Size(58, 34);
+            this.lblFecha.TabIndex = 3;
+            this.lblFecha.Text = "Fecha";
+            this.lblFecha.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblFecha.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel10
             // 
@@ -135,7 +146,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.bunifuPanel4, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.bunifuPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bunifuPanel1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.bunifuPanel2, 2, 0);
@@ -147,73 +157,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1282, 195);
             this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // bunifuPanel4
-            // 
-            this.bunifuPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuPanel4.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel4.BackgroundImage")));
-            this.bunifuPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(219)))));
-            this.bunifuPanel4.BorderRadius = 10;
-            this.bunifuPanel4.BorderThickness = 1;
-            this.bunifuPanel4.Controls.Add(this.lblMesas);
-            this.bunifuPanel4.Controls.Add(this.bunifuLabel12);
-            this.bunifuPanel4.Controls.Add(this.iconPictureBox4);
-            this.bunifuPanel4.Location = new System.Drawing.Point(975, 33);
-            this.bunifuPanel4.Margin = new System.Windows.Forms.Padding(20);
-            this.bunifuPanel4.Name = "bunifuPanel4";
-            this.bunifuPanel4.ShowBorders = true;
-            this.bunifuPanel4.Size = new System.Drawing.Size(277, 128);
-            this.bunifuPanel4.TabIndex = 7;
-            // 
-            // lblMesas
-            // 
-            this.lblMesas.AllowParentOverrides = false;
-            this.lblMesas.AutoEllipsis = false;
-            this.lblMesas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblMesas.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblMesas.Font = new System.Drawing.Font("Poppins Medium", 24F);
-            this.lblMesas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.lblMesas.Location = new System.Drawing.Point(26, 66);
-            this.lblMesas.Name = "lblMesas";
-            this.lblMesas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblMesas.Size = new System.Drawing.Size(18, 56);
-            this.lblMesas.TabIndex = 2;
-            this.lblMesas.Text = "7";
-            this.lblMesas.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblMesas.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel12
-            // 
-            this.bunifuLabel12.AllowParentOverrides = false;
-            this.bunifuLabel12.AutoEllipsis = false;
-            this.bunifuLabel12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel12.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel12.Font = new System.Drawing.Font("Poppins", 12F);
-            this.bunifuLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.bunifuLabel12.Location = new System.Drawing.Point(71, 24);
-            this.bunifuLabel12.Name = "bunifuLabel12";
-            this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel12.Size = new System.Drawing.Size(147, 28);
-            this.bunifuLabel12.TabIndex = 1;
-            this.bunifuLabel12.Text = "Mesas disponibles";
-            this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel12.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.iconPictureBox4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconPictureBox4.IconSize = 40;
-            this.iconPictureBox4.Location = new System.Drawing.Point(26, 19);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(40, 41);
-            this.iconPictureBox4.TabIndex = 0;
-            this.iconPictureBox4.TabStop = false;
             // 
             // bunifuPanel3
             // 
@@ -377,7 +320,7 @@
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.White;
             this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Hamburger;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Tags;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconPictureBox1.IconSize = 42;
@@ -397,7 +340,7 @@
             this.bunifuPanel2.BorderRadius = 10;
             this.bunifuPanel2.BorderThickness = 1;
             this.bunifuPanel2.Controls.Add(this.bunifuLabel4);
-            this.bunifuPanel2.Controls.Add(this.lblClientes);
+            this.bunifuPanel2.Controls.Add(this.lblProductos);
             this.bunifuPanel2.Controls.Add(this.bunifuLabel6);
             this.bunifuPanel2.Controls.Add(this.iconPictureBox2);
             this.bunifuPanel2.Location = new System.Drawing.Point(660, 33);
@@ -425,22 +368,22 @@
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lblClientes
+            // lblProductos
             // 
-            this.lblClientes.AllowParentOverrides = false;
-            this.lblClientes.AutoEllipsis = false;
-            this.lblClientes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblClientes.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblClientes.Font = new System.Drawing.Font("Poppins Medium", 24F);
-            this.lblClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.lblClientes.Location = new System.Drawing.Point(26, 66);
-            this.lblClientes.Name = "lblClientes";
-            this.lblClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblClientes.Size = new System.Drawing.Size(57, 56);
-            this.lblClientes.TabIndex = 2;
-            this.lblClientes.Text = "253";
-            this.lblClientes.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblClientes.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblProductos.AllowParentOverrides = false;
+            this.lblProductos.AutoEllipsis = false;
+            this.lblProductos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblProductos.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblProductos.Font = new System.Drawing.Font("Poppins Medium", 24F);
+            this.lblProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.lblProductos.Location = new System.Drawing.Point(26, 66);
+            this.lblProductos.Name = "lblProductos";
+            this.lblProductos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblProductos.Size = new System.Drawing.Size(57, 56);
+            this.lblProductos.TabIndex = 2;
+            this.lblProductos.Text = "253";
+            this.lblProductos.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblProductos.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel6
             // 
@@ -453,9 +396,9 @@
             this.bunifuLabel6.Location = new System.Drawing.Point(67, 24);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(133, 28);
+            this.bunifuLabel6.Size = new System.Drawing.Size(153, 28);
             this.bunifuLabel6.TabIndex = 1;
-            this.bunifuLabel6.Text = "Total de clientes";
+            this.bunifuLabel6.Text = "Total de productos";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -463,7 +406,7 @@
             // 
             this.iconPictureBox2.BackColor = System.Drawing.Color.White;
             this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.BoxesAlt;
             this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconPictureBox2.IconSize = 33;
@@ -721,23 +664,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblFecha
-            // 
-            this.lblFecha.AllowParentOverrides = false;
-            this.lblFecha.AutoEllipsis = false;
-            this.lblFecha.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblFecha.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblFecha.Font = new System.Drawing.Font("Poppins Light", 14F);
-            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.lblFecha.Location = new System.Drawing.Point(30, 130);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFecha.Size = new System.Drawing.Size(58, 34);
-            this.lblFecha.TabIndex = 3;
-            this.lblFecha.Text = "Fecha";
-            this.lblFecha.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblFecha.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,9 +681,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.bunifuPanel4.ResumeLayout(false);
-            this.bunifuPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.bunifuPanel3.ResumeLayout(false);
             this.bunifuPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
@@ -791,13 +714,9 @@
         private Bunifu.UI.WinForms.BunifuLabel lblVentas;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel4;
-        private Bunifu.UI.WinForms.BunifuLabel lblMesas;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel12;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel lblClientes;
+        private Bunifu.UI.WinForms.BunifuLabel lblProductos;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Bunifu.Charts.WinForms.ChartTypes.BunifuBarChart barChartGanacias;

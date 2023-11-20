@@ -11,7 +11,7 @@ namespace DomainLayer.Models
     public class CuentasModel
     {
         CuentasDA cuentasDA = new CuentasDA();
-        OrdenesDA ordenesDA = new OrdenesDA();
+        VentasDA ordenesDA = new VentasDA();
 
         //Metodo que recibe y retorna el subtotal
         public double getSubTotal(string id)
@@ -60,7 +60,7 @@ namespace DomainLayer.Models
             DataTable order = ordenesDA.getOrder(int.Parse(orderID));
             DataRow row = order.Rows[0];
             cuentasDA.updateBill(int.Parse(billID), state);
-            if(state == "Cancelado") ordenesDA.updateOrder(int.Parse(orderID), row["MesaID"].ToString(), "Cerrada", int.Parse(row["CantidadClientes"].ToString()));
+            
         }
 
         public DataTable receiptBill(string orderID)

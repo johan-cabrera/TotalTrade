@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace FOOD
 {
-    public partial class MenuCU : Form
+    public partial class ProductosCU : Form
     {
-        MenuModel menuModel = new MenuModel();
-        public MenuCU()
+        ProductosModel productModel = new ProductosModel();
+        public ProductosCU()
         {
             InitializeComponent();
         }
@@ -42,42 +42,43 @@ namespace FOOD
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string action = lblTitulo.Text;
-            string name, description, state, price, id;
+            string name, description, state, price, id, stock;
             bool actionsuccess;
 
             id = lblPlatilloID.Text;
             name = txtNombre.Text;
             description = txtDescripcion.Text;
             price = txtPrecio.Text;
+            stock = txtExistencias.Text;
 
             if (tsActive.Checked) state = "Activo";
             else state = "Inactivo";
 
-            if(action == "Agregar platillo")
+            if(action == "Agregar producto")
             {
-                actionsuccess = menuModel.insertMenu(name, description, state, price);
+                actionsuccess = productModel.insertProduct(name, description, state, price, stock);
 
                 if (actionsuccess)
                 {
-                    MessageBox.Show("El Platillo fue agregado");
+                    MessageBox.Show("El producto fue agregado");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Error al ingresar el platillo");
+                    MessageBox.Show("Error al ingresar el producto");
                 }
             }
-            else if(action == "Editar platillo")
+            else if(action == "Editar producto")
             {
-                actionsuccess = menuModel.updateMenu(id, name, description, state, price);
+                actionsuccess = productModel.updateProduct(id, name, description, state, price, stock);
                 if (actionsuccess)
                 {
-                    MessageBox.Show("El platillo fue actualizado");
+                    MessageBox.Show("El producto fue actualizado");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Error al actualizar el platillo");
+                    MessageBox.Show("Error al actualizar el producto");
                 }
             }
 

@@ -171,7 +171,7 @@
         8TIDwH+w2fwCOyDOwkhk2HkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="lblOrdenID.BaseStylesheet" xml:space="preserve">
+  <data name="lblsimbolo.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Poppins'; font-size: 15pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="panelEfectivo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -209,7 +209,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABZCAYAAADIBoEnAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAABKhJREFUeF7tnc1x2zAQhX30wZZxMEllcogvyYikM6MO7A6SDuIOnA7sDpwOnA5U
+        DQAACw0B7QfALAAABKhJREFUeF7tnc1x2zAQhX30wZZxMEllcogvyYikM6MO7A6SDuIOnA7sDpwOnA5U
         AktQCSxBJSRYEtYPtZIAYgGJ9vtm3sk0SO4CCywAQmdDRn0upldZWWktrrLi31VazNR4cmP+DGKixrf3
         jRO6SouFSr5OzWUgFtr49ZYzlsorcxmIgUooVHGOWEmpG2UuB6HZGa7WdP4p/2IuB6GBQ04ECkNqXDzr
         jnvOOWFTNPLKq1FaPOmR170pAkjQOCIr/vCGt1VeYUgsQJtr7BtRuQijLy+oRi+TPiEhfPWkdYZUy1jp
@@ -259,8 +259,8 @@
   <data name="bunifuLabel8.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Poppins SemiBold'; font-size: 14pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(15, 23, 42); text-align: left; }</value>
   </data>
-  <data name="lblBillID.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Poppins'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
+  <data name="lblVentaID.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Poppins'; font-size: 14pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="panelTarjeta.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

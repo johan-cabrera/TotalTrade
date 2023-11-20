@@ -11,27 +11,27 @@ using DomainLayer.Models;
 
 namespace FOOD
 {
-    public partial class Menu : Form
+    public partial class Productos : Form
     {
-        MenuModel menuModel = new MenuModel();
-        public Menu()
+        ProductosModel menuModel = new ProductosModel();
+        public Productos()
         {
             InitializeComponent();
         }
 
         private void btnAgregarPlatillo_Click(object sender, EventArgs e)
         {
-            MenuCU createMenu = new MenuCU();
-            createMenu.lblTitulo.Text = "Agregar platillo";
-            createMenu.FormClosed += updateDgv;
-            createMenu.ShowDialog();
+            ProductosCU createProduct = new ProductosCU();
+            createProduct.lblTitulo.Text = "Agregar producto";
+            createProduct.FormClosed += updateDgv;
+            createProduct.ShowDialog();
         }
 
         //Metodo para mostrar el menu en el DGV
-        private void showMenu()
+        private void showProducts()
         {
             dgvMenu.Rows.Clear();
-            DataTable dt = menuModel.showMenu();
+            DataTable dt = menuModel.showProducts();
 
             foreach (DataRow row in dt.Rows) 
             {
@@ -41,19 +41,19 @@ namespace FOOD
                 if (state == "Activo") pointImage = Properties.Resources.greenpoint;
                 else pointImage = Properties.Resources.greypoint;
 
-                dgvMenu.Rows.Add(row["PlatilloID"], row["NombrePlatillo"], $"$ {row["Precio"]}", pointImage, state);
+                dgvMenu.Rows.Add(row["ProductoID"], row["NombreProducto"], $"$ {row["Precio"]}", row["Existencias"], pointImage, state);
             }
         }
 
         //Metodo para actualizar el DGV cuando se cierre la ventana de crear/actualizar menu
         private void updateDgv(object sender, FormClosedEventArgs e)
         {
-            showMenu();
+            showProducts();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            showMenu();
+            showProducts();
             cbFiltro.SelectedIndex = 0;
         }
 
@@ -62,37 +62,38 @@ namespace FOOD
             if (e.RowIndex < 0) return;
 
             string colName = dgvMenu.Columns[e.ColumnIndex].Name;
-            string dishID = dgvMenu.Rows[e.RowIndex].Cells["dishID"].Value.ToString();
+            string productID = dgvMenu.Rows[e.RowIndex].Cells["dishID"].Value.ToString();
 
             //Editar platillo con el ID seleccionado
             if(colName == "editar")
             {
-                MenuCU updateMenu = new MenuCU();
+                ProductosCU updateProduct = new ProductosCU();
 
                 //Se guardan y muestran los datos del registro del menu que se quiere actualizar
-                DataTable dt = menuModel.getMenu(dishID, "");
+                DataTable dt = menuModel.getProduct(productID, "");
                 DataRow row = dt.Rows[0];
 
-                updateMenu.lblTitulo.Text = "Editar platillo";
-                updateMenu.lblPlatilloID.Text = dishID.PadLeft(6, '0');
-                updateMenu.lblPlatilloID.Visible = true;
+                updateProduct.lblTitulo.Text = "Editar producto";
+                updateProduct.lblPlatilloID.Text = productID.PadLeft(6, '0');
+                updateProduct.lblPlatilloID.Visible = true;
 
-                updateMenu.txtNombre.Text = row["NombrePlatillo"].ToString();
-                updateMenu.txtDescripcion.Text = row["DescripcionPlatillo"].ToString();
-                updateMenu.txtPrecio.Text = row["Precio"].ToString();
+                updateProduct.txtNombre.Text = row["NombreProducto"].ToString();
+                updateProduct.txtDescripcion.Text = row["DescripcionProducto"].ToString();
+                updateProduct.txtPrecio.Text = row["Precio"].ToString();
+                updateProduct.txtExistencias.Text = row["Existencias"].ToString();
 
                 switch (row["Estado"])
                 {
                     case "Activo":
-                        updateMenu.tsActive.Checked = true;
+                        updateProduct.tsActive.Checked = true;
                         break;
                     case "Inactivo":
-                        updateMenu.tsActive.Checked = false;
+                        updateProduct.tsActive.Checked = false;
                         break;
                 }
 
-                updateMenu.FormClosed += updateDgv;
-                updateMenu.ShowDialog();
+                updateProduct.FormClosed += updateDgv;
+                updateProduct.ShowDialog();
             }
         }
 

@@ -39,8 +39,7 @@ namespace FOOD
             //Asignamos los datos a la vista
             lblIngresos.Text = $"$ {inicioModel.TotalRevenue}";
             lblVentas.Text = inicioModel.TotalSales.ToString();
-            lblClientes.Text = inicioModel.TotalCustomers.ToString();
-            lblMesas.Text = inicioModel.TotalTables.ToString();
+            lblProductos.Text = inicioModel.TotalProducts.ToString();
 
             //Asignamos los datos a la grafica de barras
             DataTable barTable = inicioModel.GrossRevenueList;
@@ -49,12 +48,15 @@ namespace FOOD
             foreach (DataRow row in barTable.Rows)
             {
                 DateTime date = (DateTime)row["Date"];
+                double revenue = Convert.ToDouble(row["Revenue"]);
+
                 if (index < barLabels.Length) 
                 {
                     barLabels[index] = date.ToString("dd MMM"); 
                 }
 
-                barData.Add(Convert.ToDouble(row["Revenue"]));
+                if(revenue > 0) barData.Add(revenue);
+                else barData.Add(0);
 
                 index++;
             }
@@ -86,7 +88,6 @@ namespace FOOD
         private void timer1_Tick(object sender, EventArgs e)
         {
             updateDate();
-            
         }
 
         private void updateDate()

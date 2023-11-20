@@ -357,11 +357,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CuentasP.cs">
+    <Compile Include="Forms\VentasP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CuentasP.Designer.cs">
-      <DependentUpon>CuentasP.cs</DependentUpon>
+    <Compile Include="Forms\VentasP.Designer.cs">
+      <DependentUpon>VentasP.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CuentasCU.cs">
       <SubType>Form</SubType>
@@ -405,29 +405,29 @@
     <Compile Include="Forms\MesasCU.Designer.cs">
       <DependentUpon>MesasCU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ordenes.cs">
+    <Compile Include="Forms\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ordenes.Designer.cs">
-      <DependentUpon>Ordenes.cs</DependentUpon>
+    <Compile Include="Forms\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OrdenesCU.cs">
+    <Compile Include="Forms\VentasCU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OrdenesCU.Designer.cs">
-      <DependentUpon>OrdenesCU.cs</DependentUpon>
+    <Compile Include="Forms\VentasCU.Designer.cs">
+      <DependentUpon>VentasCU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Menu.cs">
+    <Compile Include="Forms\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Forms\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuCU.cs">
+    <Compile Include="Forms\ProductosCU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MenuCU.Designer.cs">
-      <DependentUpon>MenuCU.cs</DependentUpon>
+    <Compile Include="Forms\ProductosCU.Designer.cs">
+      <DependentUpon>ProductosCU.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -443,8 +443,8 @@
     <Compile Include="Forms\UsuariosCU.Designer.cs">
       <DependentUpon>UsuariosCU.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\CuentasP.resx">
-      <DependentUpon>CuentasP.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\VentasP.resx">
+      <DependentUpon>VentasP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CuentasCU.resx">
       <DependentUpon>CuentasCU.cs</DependentUpon>
@@ -461,8 +461,8 @@
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuCU.resx">
-      <DependentUpon>MenuCU.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ProductosCU.resx">
+      <DependentUpon>ProductosCU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Mesas.resx">
       <DependentUpon>Mesas.cs</DependentUpon>
@@ -470,14 +470,14 @@
     <EmbeddedResource Include="Forms\MesasCU.resx">
       <DependentUpon>MesasCU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ordenes.resx">
-      <DependentUpon>Ordenes.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OrdenesCU.resx">
-      <DependentUpon>OrdenesCU.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\VentasCU.resx">
+      <DependentUpon>VentasCU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

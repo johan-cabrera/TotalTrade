@@ -98,9 +98,9 @@
             this.bunifuLabel3.Location = new System.Drawing.Point(42, 178);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(285, 30);
+            this.bunifuLabel3.Size = new System.Drawing.Size(94, 30);
             this.bunifuLabel3.TabIndex = 2;
-            this.bunifuLabel3.Text = "Food Orders Optimizer Dispatcher";
+            this.bunifuLabel3.Text = "Total Trade";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 

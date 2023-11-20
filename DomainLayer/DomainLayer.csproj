@@ -42,12 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CuentasModel.cs" />
-    <Compile Include="Models\DetalleOrdenModel.cs" />
+    <Compile Include="Models\DetalleVentaModel.cs" />
     <Compile Include="Models\InicioModel.cs" />
     <Compile Include="Models\LoginUserModel.cs" />
-    <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\ProductosModel.cs" />
     <Compile Include="Models\MesasModel.cs" />
-    <Compile Include="Models\OrdenesModel.cs" />
+    <Compile Include="Models\VentasModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

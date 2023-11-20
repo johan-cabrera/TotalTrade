@@ -125,34 +125,18 @@ namespace FOOD
             openChildForm(new Usuarios());
         }
 
-        private void btnMesas_Click(object sender, EventArgs e)
+        private void btnVentas_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
-            openChildForm(new Mesas());
+            openChildForm(new Ventas());
         }
 
-        private void btnOrdenes_Click(object sender, EventArgs e)
+        private void btnProductos_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
-            openChildForm(new Ordenes());
+            openChildForm(new Productos());
         }
 
-        private void btnCuentas_Click(object sender, EventArgs e)
-        {
-            activateBtn(sender);
-            openChildForm(new Cuentas());
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            activateBtn(sender);
-            openChildForm(new Menu());
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            activateBtn(sender);
-        }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {

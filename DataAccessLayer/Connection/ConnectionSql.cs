@@ -10,17 +10,11 @@ namespace DataAccessLayer.Connection
 {
     public abstract class ConnectionSql
     {
-        private string server, db, user, pass;
         private readonly string connectionString;
 
         public ConnectionSql()
         {
-            server = "";
-            db = "";
-            user = "";
-            pass = "";
-
-            connectionString = "Data Source=Localhost;Initial Catalog=FOOD;Integrated Security=True";
+            connectionString = "Data Source=Localhost;Initial Catalog=TotalTrade;Integrated Security=True";
         }
 
         protected SqlConnection getConnection()
